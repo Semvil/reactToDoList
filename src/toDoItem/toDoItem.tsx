@@ -18,13 +18,14 @@ let ToDoItem: FC<todoProps> = ({ description, complete, chanEvent }) => {
         <div className='input-wrapper'>
             <label>
                 <input type='checkbox'
-                    defaultChecked={complete}
-                    onChange={() => chanEvent(state)}>
+                    defaultChecked={ complete }
+                    onChange={ () => chanEvent }>
                 </input>
                 </label>
         </div>
         </div>
     )
+    
 }
 
 export default ToDoItem;
