@@ -1,0 +1,47 @@
+$var1: #282c34;
+$var2: #61dafb;
+$var3: #466365;
+
+.App {
+	text-align:center;
+	& {
+		background-color: $var3;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		font-size: calc(10px);
+		color: white;
+	}
+	
+	&-link {
+		color: $var2;
+}
+}	
+.Addtask{
+	color: black;
+}
+.input-wrapper {
+	display: inline-block;
+	border: 1px solid $var3;
+	border-radius: 0.25em;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.input-wrapper {
+	display: inline-flex;
+	align-items: center;
+	user-select: none;
+}
+
+.titleBlock {
+	font-size: 18px;
+	line-height: 22px;
+}
+
+body {
+	background-color: $var3
+}
+
