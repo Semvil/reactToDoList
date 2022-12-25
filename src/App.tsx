@@ -19,7 +19,7 @@ const App: React.FC = () => {
   function handleChange (event: ChangeEvent<HTMLInputElement>): void {
     if (event.target.name === "task") {
       setTask(event.target.value);
-    } 
+    }
   };
 
   function addTask  (): void {
