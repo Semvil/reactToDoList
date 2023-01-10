@@ -1,4 +1,4 @@
-import {Task} from './Task';
+import { Task } from './Task';
 import React from "react";
 import Box from '@mui/material/Box';
 
@@ -8,11 +8,11 @@ interface Props {
   
 const ToDoTask = ({ task }: Props) => {
     return (
-    <Box component={'div'}>
         <Box component={'div'}>
-        <Box component="div" sx={{ display: 'inline' }}>{task.taskName}</Box>
+            <Box component={'div'}>
+                <Box component="div" sx={{ display: 'inline' }}>{task.taskName}</Box>
+            </Box>
         </Box>
-    </Box>
     )
 }
 

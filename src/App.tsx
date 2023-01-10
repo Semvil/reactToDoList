@@ -3,46 +3,43 @@ import React, {FC, useState, ChangeEvent} from 'react';
 import ToDoTask from './toDoTask';
 import Button from '@mui/material/Button';
 import { v4 as uuidv4 } from "uuid";
-import { ListItem } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import TextField from '@mui/material/TextField';
 import { Task } from './Task';
 import IconButton from '@mui/material/Button';
-import { red } from '@mui/material/colors';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import { height, lineHeight } from '@mui/system';
 
 const App: React.FC = () => {
 
-  const [task, setTask] = useState<string>('');
-  const [todoName, setTodoList] = useState<Task[]>([]);
+  const [todoName, setTodoName] = useState<string>('');
+  const [todoList, setTodoList] = useState<Task[]>([]);
 
   function handleChange (event: ChangeEvent<HTMLInputElement>): void {
-    if (event.target.name === "task") {
-      setTask(event.target.value);
+    if (event.target.name === "todoName") {
+      setTodoName(event.target.value);
     }
   };
 
   function addTask  (): void {
-    const newTask = { taskName: task, id:uuidv4() };
-      setTodoList([...todoName, newTask]);
+    const newTask = { taskName: todoName, id:uuidv4() };
+      setTodoList([...todoList, newTask]);
   };
 
   function removeTask(id: any): void {
-    const removedArr = [...todoName].filter(todo => todo.id !== id);
+    const removedArr = [...todoList].filter(todo => todo.id !== id);
       setTodoList(removedArr);
   };
 
   return (
     <Box component={'div'}>
-      <Typography variant="h1" align = 'center'>
+      <Typography variant="h1" align='center'>
         Plans for the day:
       </Typography>
 
-      <Typography variant="h2" align = 'center'>
+      <Typography variant="h2" align='center'>
         My Tasks
       </Typography>
     
@@ -55,7 +52,7 @@ const App: React.FC = () => {
           justifyContent="center">
           
           <Grid item>
-            <TextField id="outlined-basic" defaultValue="Small" size="small" label="Outlined" variant="outlined" type="text" name='task' fullWidth onChange={handleChange} value={task} sx={{
+            <TextField id="outlined-basic" defaultValue="Small" size="small" label="Outlined" variant="outlined" type="text" name='todoName' fullWidth onChange={handleChange} value={todoName} sx={{
               input: {
                 color: 'black',
                 fontSize: '25px'
@@ -76,11 +73,11 @@ const App: React.FC = () => {
           item
           container
           spacing={0}
-          direction = 'column'  
+          direction='column'  
           alignItems="center"
           justifyContent="center">
           
-          {todoName.map((task: Task) => {
+          {todoList.map((todoName: Task) => {
             return (
             <>
               <Grid item sx={{
@@ -90,8 +87,8 @@ const App: React.FC = () => {
                   fontSize: '40px',
                   textAlign: 'center',
                   lineHeight: '40px'
-                  }}> <ToDoTask task={task} /> </Typography>
-                <IconButton sx={{ color: "red" }} aria-label="delete" size='large' onClick={() => removeTask(task.id)}>
+                  }}> <ToDoTask task={todoName} /> </Typography>
+                <IconButton sx={{ color: "red" }} aria-label="delete" size='large' onClick={() => removeTask(todoName.id)}>
                   <DeleteIcon fontSize="inherit" sx={{
                     fontSize: '25px',
                     color: "red"
