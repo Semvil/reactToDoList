@@ -11,9 +11,11 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
+import { makeThemedStyles } from './hooks/useThemedStyles';
+
 
 const App: React.FC = () => {
-
+  const { styles } = useStyles();
   const [todoName, setTodoName] = useState<string>('');
   const [todoList, setTodoList] = useState<Task[]>([]);
 
@@ -34,7 +36,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <Box component={'div'}>
+    <Box sx = {styles.container}>
       <Typography variant="h1" align='center'>
         Plans for the day:
       </Typography>
@@ -103,6 +105,16 @@ const App: React.FC = () => {
     </Box>
   )
 }
+
+const useStyles = makeThemedStyles()(() => ({
+  container: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100%",
+    py: 4,
+  },
+}));
 
 export default App;
 
