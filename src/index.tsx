@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.scss";
-import reportWebVitals from "./reportWebVitals";
+import App from "src/components/App";
+import "src/styles/index.scss";
+import reportWebVitals from "src/config/reportWebVitals";
 
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Failed to find the root element');
