@@ -1,4 +1,4 @@
-import { Task } from './Task';
+import { Task } from '../interface/Task';
 import React from "react";
 import Box from '@mui/material/Box';
 

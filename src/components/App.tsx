@@ -1,17 +1,17 @@
-import './App.scss';
+import 'src/styles/App.scss';
 import React, {FC, useState, ChangeEvent} from 'react';
-import ToDoTask from './toDoTask';
+import ToDoTask from '../pages/toDoTask';
 import Button from '@mui/material/Button';
 import { v4 as uuidv4 } from "uuid";
 import DeleteIcon from '@mui/icons-material/Delete';
 import TextField from '@mui/material/TextField';
-import { Task } from './Task';
+import { Task } from '../interface/Task';
 import IconButton from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
-import { makeThemedStyles } from './hooks/useThemedStyles';
+import { makeThemedStyles } from '../hooks/useThemedStyles';
 
 
 const App: React.FC = () => {
@@ -108,7 +108,7 @@ const App: React.FC = () => {
 
 const useStyles = makeThemedStyles()(() => ({
   container: {
-    display: "flex",
+    
     alignItems: "center",
     justifyContent: "center",
     height: "100%",
